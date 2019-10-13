@@ -17,6 +17,7 @@
     "next": "9.0.7",
     "nodemon": "^1.19.3",
     "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
     "passport-saml": "^1.2.0",
     "react": "16.10.1",
     "react-dom": "16.10.1",
