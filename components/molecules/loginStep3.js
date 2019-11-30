@@ -17,58 +17,131 @@ import Input from "../atoms/Input";
 import theme from "../theme";
 
 const months = [
-    { value: 'January', label: 'January'}
+    { value: 'January', label: 'January'},
+    { value: 'February', label: 'February'},
+    { value: 'March', label: 'March'},
+    { value: 'April', label: 'April'},
+    { value: 'May', label: 'May'},
+    { value: 'June', label: 'June'},
+    { value: 'July', label: 'July'},
+    { value: 'August', label: 'August'},
+    { value: 'September', label: 'September'},
+    { value: 'October', label: 'October'},
+    { value: 'November', label: 'November'},
+    { value: 'December', label: 'December'},
+];
+const term = [
+    { value: '1A', label: '1A'},
+    { value: '1B', label: '1B'},
+    { value: '2A', label: '2A'},
+    { value: '2B', label: '2B'},
+    { value: '3A', label: '3A'},
+    { value: '3B', label: '3B'},
+    { value: '4A', label: '4A'},
+    { value: '4B', label: '4B'},
+    { value: '5A', label: '5A'},
+    { value: '5B', label: '5B'},
 ]
 
-const LoginStep3 = () => (
-  <div>
-    <Card
-      style={{
-        width: "80%",
-        height: "90%",
-      }}
-    >
-        <Subtitle>Tell us more about yourself</Subtitle>
-        <Header5>Upload a profile picture</Header5>
 
-        <Header5>Birthday</Header5>
-        <div style={{ 
-            flexDirection: "column" 
-        }}>
-            <Select options={months} width="10%" />
-            <Input variant="variant" placeholder="Day" />
-            <Input variant="variant" placeholder="Year" />
-        </div>
+const LoginStep3 = () => {
 
-        <div style={{
-            flexDirection: "row"
-        }}>
-            <Header5>What program are you in?</Header5>
-            <Header5>Select your Co-op Sequence</Header5>
-        </div>
-        <div style={styles.inline}>
-            <Select options={months} width="20%" />
-            <Select options={months} width="10%" />
-        </div>
+    <div>
+        <Card
+        style={{
+            width: "80%",
+            height: "90%",
+        }}
+        >
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <Subtitle>Tell us more about yourself</Subtitle>
+            </div>
 
-        <Header5>What term are you currently in?</Header5>
-        <Select options={months} width="100%" />
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <InlineItemRow>
+                    <div style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "50%",
+                        backgroundColor: "white",
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        borderColor: "black"
+                    }}>
 
-        <Header5>What are some of your interests?</Header5>
-        <Select options={months} width="100%" />
+                    </div>
+                    <Header5 style={{paddingLeft: "10px"}}>Upload a profile picture</Header5>
+                </InlineItemRow>
+            </div>
 
-        <Header5>What are some of your skills?</Header5>
-        <Select options={months} width="100%" />
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <Header5>Birthday</Header5>
+                <InlineItemRow>
+                    <Select placeholder="Month" options={months} width="10%" />
+                    <Input variant="variant" placeholder="Day" style={{lineHeight: '33px'}} />
+                    <Input variant="variant" placeholder="Year" style={{lineHeight: '33px'}} />
+                </InlineItemRow>
+            </div>
+
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <InlineItemRow>
+                    <Header5>What program are you in?</Header5>
+                    <Header5 style={{paddingLeft: "20px"}}>Select your Co-op Sequence</Header5>
+                </InlineItemRow>
+                <InlineItemRow>
+                    <Select placeholder="Choose Program" options={months} width="30%" />
+                    <Select style={{paddingLeft: "20px"}} placeholder="Choose Sequence" options={term} width="30%" />
+                    <div style={{paddingLeft: "20px"}}>
+                            <Button>Onstream</Button>
+                            <Button>Offstream</Button>
+                    </div>
+                </InlineItemRow>
+            </div>
+
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <Header5>What term are you currently in?</Header5>
+                <Select options={months} width="100%" />
+            </div>
+
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <Header5>What are some of your interests?</Header5>
+                <Select options={months} width="100%" />
+            </div>
+
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <Header5>What are some of your skills?</Header5>
+                <Select options={months} width="100%" />
+            </div>
+            
+            <div style={{
+                paddingBottom: "10px"
+            }}>
+                <Header5>Write a little bio!</Header5>
+                <Body>You gotta write at least 100 words about yourself. If you hate writing, use this template and just change some</Body>
+                <Body>content If you're feeling extra craftly, write something different and be creative!</Body>
+            </div>
         
-      
-    </Card>
-  </div>
-);
-
-const styles = {
-    inline: {
-        flexDirection: "row"
-    }
+        </Card>
+    </div>
 };
+
+const InlineItemRow = styled(SystemComponent)`
+    display: flex;
+    align-items: center;
+`;
 
 export default LoginStep3;
