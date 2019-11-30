@@ -44,7 +44,7 @@ const term = [
 ]
 
 
-const LoginStep3 = () => {
+const LoginStep3 = () => (
 
     <div>
         <Card
@@ -83,9 +83,9 @@ const LoginStep3 = () => {
             }}>
                 <Header5>Birthday</Header5>
                 <InlineItemRow>
-                    <Select placeholder="Month" options={months} width="10%" />
-                    <Input variant="variant" placeholder="Day" style={{lineHeight: '33px'}} />
-                    <Input variant="variant" placeholder="Year" style={{lineHeight: '33px'}} />
+                    <Select placeholder="Month" options={months} width="15%" />
+                    <Input style={{paddingLeft: "5px"}} variant="variant" placeholder="Day" style={{lineHeight: '33px'}} />
+                    <Input style={{paddingLeft: "5px"}} variant="variant" placeholder="Year" style={{lineHeight: '33px'}} />
                 </InlineItemRow>
             </div>
 
@@ -94,12 +94,12 @@ const LoginStep3 = () => {
             }}>
                 <InlineItemRow>
                     <Header5>What program are you in?</Header5>
-                    <Header5 style={{paddingLeft: "20px"}}>Select your Co-op Sequence</Header5>
+                    <Header5 style={{paddingLeft: "40px"}}>Select your Co-op Sequence</Header5>
                 </InlineItemRow>
                 <InlineItemRow>
-                    <Select placeholder="Choose Program" options={months} width="30%" />
-                    <Select style={{paddingLeft: "20px"}} placeholder="Choose Sequence" options={term} width="30%" />
-                    <div style={{paddingLeft: "20px"}}>
+                    <Select placeholder="Choose Program" options={months} width="25%" />
+                    <Select style={{paddingLeft: "30px"}} placeholder="Choose Sequence" options={term} width="25%" />
+                    <div style={{paddingLeft: "30px"}}>
                             <Button>Onstream</Button>
                             <Button>Offstream</Button>
                     </div>
@@ -137,7 +137,7 @@ const LoginStep3 = () => {
         
         </Card>
     </div>
-};
+);
 
 const InlineItemRow = styled(SystemComponent)`
     display: flex;
