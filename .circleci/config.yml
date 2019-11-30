@@ -12,6 +12,8 @@ jobs:
             mv ./backend/data/config.template.json ./backend/data/config.json
             docker build ./docker -t teamhub
             docker-compose up -d
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: Install packages
           command: npm install
