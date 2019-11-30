@@ -12,10 +12,13 @@ jobs:
             mv ./backend/data/config.template.json ./backend/data/config.json
             docker build ./docker -t teamhub
             docker-compose up -d
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: Install packages
+          name: install-npm-wee
           command: npm install
       - run:
           name: Run Tests
